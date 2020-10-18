@@ -6,11 +6,13 @@ import csv
 appPure = Flask(__name__)
 apiPure = Api(appPure)
 
+# Open csv timezones database
 with open('timezones.csv', newline='') as f:
     reader = csv.reader(f)
     timeData = list(reader)
 
 
+# Check if country_id is on a country list
 def get_country(country_id):
     counter = 1
     while country_id != timeData[counter - 1][0] and counter < len(timeData):
@@ -25,7 +27,10 @@ class CountryPure(Resource):
         counter = get_country(country_id)
 
         if counter == len(timeData):
-            return "Can't find"
+            return jsonify({
+                "target": "Cant't find selected timezone",
+                "time": "00:00:00"
+            })
         else:
             now = datetime.now()
             now += timedelta(seconds=int(timeData[counter - 1][1]) - 7200)

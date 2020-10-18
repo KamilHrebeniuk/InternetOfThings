@@ -7,6 +7,7 @@ app = Flask(__name__)
 api = Api(app)
 
 
+# Write response to file with a timestamp as a name
 class Country(Resource):
     def post(self):
         f = open("output/" + datetime.now().strftime("%H-%M-%S") + ".json", "w")

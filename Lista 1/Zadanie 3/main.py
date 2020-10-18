@@ -1,3 +1,4 @@
+import sys
 import paho.mqtt.client as mqtt
 import requests
 from flask import Flask
@@ -7,6 +8,7 @@ app = Flask(__name__)
 api = Api(app)
 
 
+# Action when response is received
 def on_message(client, userdata, message):
     print("Watching for: ", message.topic)
     print("Current time: ", str(message.payload.decode("utf-8")))
@@ -22,5 +24,5 @@ if __name__ == '__main__':
     client = mqtt.Client("P2")
     client.on_message = on_message
     client.connect("mqtt.eclipse.org", 1883, 60)
-    client.subscribe("EuropeMinsk")
+    client.subscribe(sys.argv[1])
     client.loop_forever(1)

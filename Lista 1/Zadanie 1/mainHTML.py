@@ -7,11 +7,13 @@ import csv
 app = Flask(__name__)
 api = Api(app)
 
+# Open csv timezones database
 with open('timezones.csv', newline='') as f:
     reader = csv.reader(f)
     timeData = list(reader)
 
 
+# Check if country_id is on a country list
 def get_country(country_id):
     counter = 1
     while country_id != timeData[counter - 1][0] and counter < len(timeData):
