@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+
+		.background-image {
+			height:100%;
+			width:100%;
+			vertical-align: top;
+		}
+
+		.container {
+			position: fixed;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+			width: 30%;
+			height: 40%;
+			background: white;
+			opacity: 0.9;
+			border-radius: 5px;
+			display: none;
+		}
+
+		span {
+			width: 100%;
+			text-align: center;
+			display: block;
+			font-size: 28px;
+			font-family: system-ui;
+			font-weight: 300;
+		}
+
+		.target {
+			position: absolute;
+			top: 40%;
+		}
+
+		.time {
+			position: absolute;
+			top: 50%;
+		}
+
+	</style>
+	<body>
+		<img class="background-image" src="/static/images/landskape{{ rand }}.jpg" alt=""/>
+		<div class="container">
+			<span class="target">{{ target }}</span>
+			<span class="time">{{ time }}</span>
+		</div>
+		<script>
+			$( document ).ready(function() {
+			  $( ".container" ).fadeIn( "slow", function() {
+			  });
+			});
+		</script>
+	</body>
+</html>
