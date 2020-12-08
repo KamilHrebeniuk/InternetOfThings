@@ -1,0 +1,27 @@
+Streets
+1. Nazwa ulicy
+2. Kierunek przejazdu
+3. Numer rejestracyjny
+
+Beaches
+1. Nazwa plaży
+2. Temperatura wody
+3. Głębokość wody
+4. Częstotliwość fal
+
+Power
+1. Czas
+2. Zużyta energia
+3. Napięcie
+
+Bicycle
+1. ID stacji
+2. Nazwa stacji
+3. Łącznie miejsc
+4. Zajęte miejsca
+
+Buildings
+1. Nazwa wydarzenia
+2. Budynek
+3. Czas rozpoczęcia
+4. Czas zakończenia
